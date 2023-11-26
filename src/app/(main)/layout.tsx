@@ -153,7 +153,7 @@ export default function MainLayout({
           <AboutSection />
           <h2 className="mt-8 flex items-center font-mono text-sm font-medium leading-7 text-zinc-900">
             <PersonIcon className="h-3 w-auto fill-zinc-300" />
-            <span className="ml-2.5">Hosted by</span>
+            <span className="ml-2.5">Tworzony z pasją przez</span>
           </h2>
           <div className="mt-2 flex gap-6 text-sm font-bold leading-7 text-zinc-900">
             {hosts.map((host, hostIndex) => (
