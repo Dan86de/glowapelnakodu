@@ -3,11 +3,15 @@ import { type Metadata } from 'next'
 import '@/styles/tailwind.css'
 
 export const metadata: Metadata = {
+  metadataBase: new URL('https://glowapelnakodu.pl'),
   title: {
     template: 'Głowa pełna kodu',
     default: 'Głowa pełna kodu - Rozmowy o kodzie i rozwoju.',
   },
   description: 'Rozmowy o kodzie i rozwoju.',
+  openGraph: {
+    images: '/opengraph-image.png',
+  },
 }
 
 export default function RootLayout({
