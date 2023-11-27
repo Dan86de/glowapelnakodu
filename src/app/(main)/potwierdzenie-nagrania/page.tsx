@@ -1,5 +1,8 @@
 import { Container } from '@/components/Container'
 import Link from 'next/link'
+import avatarImage from '../../../images/avatar.webp'
+import signature from '../../../images/signature.webp'
+import Image from 'next/image'
 
 export default async function PortwierdzenieNagrania() {
   return (
@@ -31,7 +34,7 @@ export default async function PortwierdzenieNagrania() {
                 'https://riverside.fm/studio/glowa-pelna-kodu?t=71adee18a9eabbdb9b7f'
               }
             >
-              {' Studio '}
+              {' Studio'}
             </Link>
             )
           </li>
@@ -186,6 +189,29 @@ export default async function PortwierdzenieNagrania() {
             kamerę, a nie na ekran.
           </li>
         </ol>
+        <div className="flex w-full justify-end pt-8">
+          <div className="flex items-start gap-1">
+            <Image
+              src={avatarImage}
+              alt="Avatar"
+              className="h-14 w-14 rounded-full object-cover"
+            />
+            <div className="flex flex-col justify-start pl-2">
+              <strong>Daniel Noworyta</strong>
+              <Link
+                className="items-center text-sm font-bold leading-6 text-brand hover:text-orange-700 active:text-orange-900"
+                href={'https://glowapelnakodu.pl'}
+              >
+                {'GlowaPelnaKodu.pl'}
+              </Link>
+              <Image
+                src={signature}
+                alt="Signature"
+                className="h-20 w-40 -translate-x-5 object-cover"
+              />
+            </div>
+          </div>
+        </div>
       </Container>
     </div>
   )
