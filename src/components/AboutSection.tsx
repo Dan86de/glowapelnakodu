@@ -17,37 +17,22 @@ export function AboutSection(props: React.ComponentPropsWithoutRef<'section'>) {
         />
         <span className="ml-2.5">O podcaście</span>
       </h2>
-      <div
+      <p
         className={clsx(
           'mt-2 text-base leading-7 text-zinc-700',
           !isExpanded && 'lg:line-clamp-4',
         )}
       >
-        <p className="pb-4">
-          Głowa Pełna Kodu to podcast, który prowadzi Cię w fascynującą podróż
-          do umysłów ciekawych ludzi z różnych dziedzin.
-        </p>
-
-        <p className="pb-4">
-          ZapraszamCię do wzięcia udziału w niezwykłych rozmowach, które
-          odsłaniają różne aspekty życia ciekawych ludzi.{' '}
-          <em>Głowa Pełna Kodu</em> to przestrzeń, w której nie ma miejsca na
-          kompromisy, a jedynie prawdziwe historie, spojrzenia i przeżycia.
-        </p>
-
-        <p>
-          Przyłącz się do moich fascynujących spotkań, gdzie każdy gość
-          przekazuje swoją wiedze i doswiadczenie. Odkryjemy razem tajemnice,
-          które skrywają się za pozornie zwyczajnymi ludźmi i będziemy czerpać
-          inspirację z ich niezwykłych historii. To podcast, który rzuca
-          wyzwanie konwencjom i stawia na autentyczność, aby każdy mógł poznać
-          prawdę, która kryje się w <em>&quot;Głowie Pełnej Kodu&quot;</em>.
-        </p>
-      </div>
+        Podcast, który jest pełen praktycznych porad i inspiracji dla
+        początkujących oraz doświadczonych programistów. Każdy odcinek to dawka
+        wiedzy o zdobywaniu pierwszej pracy, rozwijaniu umiejętności, tworzeniu
+        efektywnego portfolio i wielu innych aspektach, które pomogą Ci wyróżnić
+        się na rynku pracy.
+      </p>
       {!isExpanded && (
         <button
           type="button"
-          className="text-brand mt-2 hidden text-sm font-bold leading-6 hover:text-orange-700 active:text-orange-900 lg:inline-block"
+          className="mt-2 hidden text-sm font-bold leading-6 text-brand hover:text-orange-700 active:text-orange-900 lg:inline-block"
           onClick={() => setIsExpanded(true)}
         >
           Więcej
