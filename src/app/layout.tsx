@@ -8,7 +8,11 @@ export const metadata: Metadata = {
     template: 'Głowa pełna kodu',
     default: 'Głowa pełna kodu - Rozmowy o kodzie i rozwoju.',
   },
-  description: 'Rozmowy o kodzie i rozwoju.',
+  description: `Podcast tworzony przez programistę dla programistów, którzy marzą o
+  stworzeniu własnego biznesu. Jako samouk, który przeszedł drogę od
+  branży samochodowej do świata technologii, chcę podzielić się moją
+  unikalną perspektywą na zmianę branży, naukę programowania i tworzenie
+  własnych produktów.`,
   openGraph: {
     images: '/opengraph-image.png',
   },

@@ -23,11 +23,11 @@ export function AboutSection(props: React.ComponentPropsWithoutRef<'section'>) {
           !isExpanded && 'lg:line-clamp-4',
         )}
       >
-        Podcast, który jest pełen praktycznych porad i inspiracji dla
-        początkujących oraz doświadczonych programistów. Każdy odcinek to dawka
-        wiedzy o zdobywaniu pierwszej pracy, rozwijaniu umiejętności, tworzeniu
-        efektywnego portfolio i wielu innych aspektach, które pomogą Ci wyróżnić
-        się na rynku pracy.
+        Podcast tworzony przez programistę dla programistów, którzy marzą o
+        stworzeniu własnego biznesu. Jako samouk, który przeszedł drogę od
+        branży samochodowej do świata technologii, chcę podzielić się moją
+        unikalną perspektywą na zmianę branży, naukę programowania i tworzenie
+        własnych produktów.
       </p>
       {!isExpanded && (
         <button

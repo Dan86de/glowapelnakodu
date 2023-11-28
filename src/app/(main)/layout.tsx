@@ -104,7 +104,7 @@ export default function MainLayout({
               <Link href="/">Głowa pełna kodu</Link>
             </p>
             <p className="mt-3 text-lg font-medium leading-8 text-zinc-700">
-              Rozmowy o kodzie i rozwoju.
+              Rozmowy o kodzie i tworzeniu własnych produktów.
             </p>
           </div>
           <AboutSection className="mt-12 hidden lg:block" />
