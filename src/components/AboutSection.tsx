@@ -41,7 +41,7 @@ export function AboutSection(props: React.ComponentPropsWithoutRef<'section'>) {
           które skrywają się za pozornie zwyczajnymi ludźmi i będziemy czerpać
           inspirację z ich niezwykłych historii. To podcast, który rzuca
           wyzwanie konwencjom i stawia na autentyczność, aby każdy mógł poznać
-          prawdę, która kryje się w <em>“Głowie Pełnej Kodu"</em>.
+          prawdę, która kryje się w <em>&quot;Głowie Pełnej Kodu&quot;</em>.
         </p>
       </div>
       {!isExpanded && (
