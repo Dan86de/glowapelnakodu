@@ -6,7 +6,7 @@ export const metadata: Metadata = {
   metadataBase: new URL('https://glowapelnakodu.pl'),
   title: {
     template: 'Głowa pełna kodu',
-    default: 'Głowa pełna kodu - Rozmowy o kodzie i rozwoju.',
+    default: 'Głowa pełna kodu - Rozmowy o tworzeniu własnych produktów.',
   },
   description: `Podcast tworzony przez programistę dla programistów, którzy marzą o
   stworzeniu własnego biznesu. Jako samouk, który przeszedł drogę od

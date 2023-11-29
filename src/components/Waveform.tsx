@@ -31,9 +31,9 @@ export function Waveform(props: React.ComponentPropsWithoutRef<'svg'>) {
           <stop offset="100%" stopColor="#0A0A0A" />
         </linearGradient>
         <linearGradient id={`${id}-gradient`}>
-          <stop offset="0%" stopColor="#0A0A0A" />
+          <stop offset="0%" stopColor="#F25118" />
           <stop offset="50%" stopColor="#F25118" />
-          <stop offset="100%" stopColor="#0A0A0A" />
+          <stop offset="100%" stopColor="#F25118" />
         </linearGradient>
         <mask id={`${id}-mask`}>
           <rect width="100%" height="100%" fill={`url(#${id}-pattern)`} />
