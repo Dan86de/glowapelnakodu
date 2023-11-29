@@ -25,7 +25,7 @@ export function AboutSection(props: React.ComponentPropsWithoutRef<'section'>) {
       >
         Podcast tworzony przez programistę dla programistów, którzy marzą o
         stworzeniu własnego biznesu. Jako samouk, który przeszedł drogę od
-        branży samochodowej do świata technologii, chcę podzielić się unikalną
+        branży samochodowej do świata technologii, dzielę się unikalną
         perspektywą na zmianę branży, naukę programowania i tworzenie własnych
         produktów.
       </p>

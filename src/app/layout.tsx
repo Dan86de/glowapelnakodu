@@ -10,8 +10,9 @@ export const metadata: Metadata = {
   },
   description: `Podcast tworzony przez programistę dla programistów, którzy marzą o
   stworzeniu własnego biznesu. Jako samouk, który przeszedł drogę od
-  branży samochodowej do świata technologii, chcę podzielić się unikalną perspektywą na zmianę branży, naukę programowania i tworzenie
-  własnych produktów.`,
+  branży samochodowej do świata technologii, dzielę się unikalną
+  perspektywą na zmianę branży, naukę programowania i tworzenie własnych
+  produktów.`,
   openGraph: {
     images: '/opengraph-image.png',
   },
