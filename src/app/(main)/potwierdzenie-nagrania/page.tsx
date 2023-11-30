@@ -63,6 +63,10 @@ export default async function PortwierdzenieNagrania() {
             <strong>Ciebie proszę o nagranie swojego głosu</strong> (nie jest to
             obowiązkowe). Dzięki temu jakość dzwięku jest dużo lepsza.
           </li>
+          <li className="pb-2">
+            Listę pytań przesyłam zawsze wcześniej. Nie wykluczam jednak
+            odchodzenia od pytań, żeby bardziej pogłębić dany temat.
+          </li>
         </ul>
         <h2 className="pt-8 text-xl font-bold leading-7 text-zinc-900 md:text-2xl">
           Jakiego sprzętu potrzebujesz?

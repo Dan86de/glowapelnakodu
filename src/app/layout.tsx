@@ -6,13 +6,13 @@ export const metadata: Metadata = {
   metadataBase: new URL('https://glowapelnakodu.pl'),
   title: {
     template: 'Głowa pełna kodu',
-    default: 'Głowa pełna kodu - Rozmowy o tworzeniu własnych produktów.',
+    default: `Głowa pełna kodu - Podcast dla programistów, którzy marzą o stworzeniu własnego biznesu,
+    tworzony przez programistę.`,
   },
-  description: `Podcast tworzony przez programistę dla programistów, którzy marzą o
-  stworzeniu własnego biznesu. Jako samouk, który przeszedł drogę od
-  branży samochodowej do świata technologii, dzielę się unikalną
-  perspektywą na zmianę branży, naukę programowania i tworzenie własnych
-  produktów.`,
+  description: `Podcast dla programistów, którzy marzą o stworzeniu własnego biznesu,
+  tworzony przez programistę. Jako samouk, który przeszedł drogę od branży
+  samochodowej do świata technologii, dzielę się unikalną perspektywą na
+  zmianę branży, naukę programowania i tworzenie własnych produktów.`,
   openGraph: {
     images: '/opengraph-image.png',
   },
