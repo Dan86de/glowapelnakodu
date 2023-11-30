@@ -9,10 +9,7 @@ export const metadata: Metadata = {
     default: `Głowa pełna kodu - Podcast dla programistów, którzy marzą o stworzeniu własnego biznesu,
     tworzony przez programistę.`,
   },
-  description: `Podcast dla programistów, którzy marzą o stworzeniu własnego biznesu,
-  tworzony przez programistę. Jako samouk, który przeszedł drogę od branży
-  samochodowej do świata technologii, dzielę się unikalną perspektywą na
-  zmianę branży, naukę programowania i tworzenie własnych produktów.`,
+  description: `Podcast dla programistów, którzy marzą o stworzeniu własnego biznesu, tworzony przez programistę. Jako samouk, który przeszedł drogę od branży samochodowej do świata technologii, dzielę się unikalną perspektywą na zmianę branży, naukę programowania i tworzenie własnych produktów.`,
   openGraph: {
     images: '/opengraph-image.png',
   },
