@@ -11,7 +11,7 @@ export default async function PortwierdzenieNagrania() {
         <h1 className="text-2xl font-bold leading-9 text-zinc-900 lg:text-3xl">
           Nagranie podcastu Głowa Pełna Kodu - informacje techniczne
         </h1>
-        <p className="pt-12 lg:pt-18">
+        <p className="pt-8 lg:pt-10">
           W przypadku podcastu liczy się nie tylko ciekawa treść, ale również
           poprawność techniczna. Jeżeli jakość dźwięku będzie bardzo słaba, to
           wielu odbiorców zrezygnuje z słuchania rozmowy na początku. Szkoda by
@@ -49,7 +49,7 @@ export default async function PortwierdzenieNagrania() {
             , w dedykowanej odcinkom podcastu playliście.
           </li>
           <li className="pb-2">
-            Ściezka dzwiękowa z rozmowy jest publikowana jako{' '}
+            Ścieżka dzwiękowa z rozmowy jest publikowana jako{' '}
             <Link
               className="inline items-center text-sm font-bold leading-6 text-brand hover:text-orange-700 active:text-orange-900"
               href={'https://glowapelnakodu.pl'}
@@ -60,9 +60,8 @@ export default async function PortwierdzenieNagrania() {
           </li>
           <li className="pb-2">
             Nagraniem zajmuję się ja, ale{' '}
-            <strong>Ciebie proszę o nagranie swojego głosu</strong>. Dzięki temu
-            jakość dzwięku jest dużo lepsza. Wskazówki jak to zrobić znajdziesz
-            w dajszej części instrukcji.
+            <strong>Ciebie proszę o nagranie swojego głosu</strong> (nie jest to
+            obowiązkowe). Dzięki temu jakość dzwięku jest dużo lepsza.
           </li>
         </ul>
         <h2 className="pt-8 text-xl font-bold leading-7 text-zinc-900 md:text-2xl">
