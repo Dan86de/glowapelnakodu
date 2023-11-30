@@ -201,8 +201,8 @@ export default async function PortwierdzenieNagrania() {
           </li>
           <li className="pb-2">
             Będę potrzebował Twoje zdjęcie najlepiej takie, w którym patrzysz
-            prosto w obiektyw. Zdjęcie będzie wykorzystane do zrobienia
-            miniaturki na wersję video na kanale YouTube.
+            prosto w obiektyw. Zdjęcie będzie wykorzystane do zrobienia okładki
+            podcastu i miniaturki na wersję video na kanale YouTube.
           </li>
           <li className="pb-2">
             Jeżeli masz jakieś bio lub notkę dla mediów podziel się proszę, jej
