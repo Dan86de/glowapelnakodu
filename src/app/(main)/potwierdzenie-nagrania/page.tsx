@@ -61,7 +61,7 @@ export default async function PortwierdzenieNagrania() {
           <li className="pb-2">
             Nagraniem zajmuję się ja, ale{' '}
             <strong>Ciebie proszę o nagranie swojego głosu</strong>. Dzięki temu
-            jakość dzwięku jest duzo lepsza. Wskazówki jak to zrobić znajdziesz
+            jakość dzwięku jest dużo lepsza. Wskazówki jak to zrobić znajdziesz
             w dajszej części instrukcji.
           </li>
         </ul>
@@ -149,7 +149,7 @@ export default async function PortwierdzenieNagrania() {
           Pomieszczenie, w którym nagrywasz, ma bardzo duże znaczenie, dlatego
           uważnie przeczytaj poniższe wskazówki.
         </p>
-        <ol className="list-decimal pl-4 pt-6">
+        <ol className="list-decimal pt-6">
           <li className="mb:pb-4 pb-3">
             Znajdź ciche, spokojne miejsce, gdzie nikt Ci nie będzie
             przeszkadzał.
@@ -189,6 +189,30 @@ export default async function PortwierdzenieNagrania() {
             kamerę, a nie na ekran.
           </li>
         </ol>
+        <h2 className="pt-8 text-xl font-bold leading-7 text-zinc-900 md:text-2xl">
+          W jaki sposób promuję podcast?
+        </h2>
+        <ul className="list-disc">
+          <li className="pb-2 pt-8">
+            Do promocji podcastu używam głównie fragmentów naszej rozmowy. Przed
+            wypuszczeniem odcinka staram się nagrać zapowiedź w krótkiej
+            jednominutowej formie, gdzie mogę zamieścić interesujące fragmenty
+            naszej rozmowy.
+          </li>
+          <li className="pb-2">
+            Będę potrzebował Twoje zdjęcie najlepiej takie, w którym patrzysz
+            prosto w obiektyw. Zdjęcie będzie wykorzystane do zrobienia
+            miniaturki na wersję video na kanale YouTube.
+          </li>
+          <li className="pb-2">
+            Jeżeli masz jakieś bio lub notkę dla mediów podziel się proszę, jej
+            treścią ze mną.
+          </li>
+          <li className="pb-2">
+            Odcinek promuję również na innych kanałach w Social Mediach, oraz w
+            newsletterze programistafrontend.
+          </li>
+        </ul>
         <div className="flex w-full justify-end pt-8">
           <div className="flex items-start gap-1">
             <Image

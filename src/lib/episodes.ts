@@ -34,6 +34,7 @@ export async function getAllEpisodes() {
 
   let feed = (await parseFeed(
     'https://www.spreaker.com/show/6021143/episodes/feed',
+    // 'https://their-side-feed.vercel.app/api/feed',
   )) as unknown
   let items = parse(FeedSchema, feed).items
 
