@@ -5,10 +5,10 @@ import { Client } from '@notionhq/client'
 const notion = new Client({ auth: process.env.NOTION_TOKEN })
 
 export const getDb = async (data: FormData) => {
-  const name = data.get('name') ?? ''
-  const surname = data.get('surname') ?? ''
-  const email = data.get('email') ?? ''
-  const message = data.get('message') ?? ''
+  const name = (data.get('name') as string) ?? ''
+  const surname = (data.get('surname') as string) ?? ''
+  const email = (data.get('email') as string) ?? ''
+  const message = (data.get('message') as string) ?? ''
 
   const databaseId = process.env.NOTION_DB_ID
 
