@@ -1,11 +1,13 @@
 'use server'
 
 import { Client } from '@notionhq/client'
+import { redirect } from 'next/navigation'
 
 const notion = new Client({ auth: process.env.NOTION_TOKEN })
 
 export const getDb = async (data: FormData) => {
   const name = (data.get('name') as string) ?? ''
+  const who = (data.get('who') as string) ?? ''
   const surname = (data.get('surname') as string) ?? ''
   const email = (data.get('email') as string) ?? ''
   const message = (data.get('message') as string) ?? ''
@@ -36,14 +38,14 @@ export const getDb = async (data: FormData) => {
           rich_text: [
             {
               text: {
-                content: message,
+                content: `Proponuję: ${who}\n ${message}`,
               },
             },
           ],
         },
       },
     })
-    console.log(res)
+    redirect('/sugestia-podziekowanie')
   } catch (error: unknown) {
     if (error instanceof Error) {
       throw new Error(error.message)

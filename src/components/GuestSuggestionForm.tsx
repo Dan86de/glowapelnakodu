@@ -1,8 +1,8 @@
 import { getDb } from '@/service/notion'
 
 const sides = [
-  { id: 1, name: 'Siebie', value: 'self' },
-  { id: 2, name: 'Kogoś innego', value: 'other' },
+  { id: 1, name: 'Siebie', value: 'siebie' },
+  { id: 2, name: 'Kogoś innego', value: 'kogoś innego' },
 ]
 
 export const GuestSuggestionForm = () => {
