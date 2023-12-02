@@ -7,7 +7,7 @@ const sides = [
 
 export const GuestSuggestionForm = () => {
   return (
-    <form className="pt-4 accent-brand" action={getDb}>
+    <form className="pt-12 accent-brand lg:pt-20" action={getDb}>
       <fieldset>
         <legend className="text-base font-semibold text-zinc-900">
           Kogo sugerujesz?
@@ -121,7 +121,14 @@ export const GuestSuggestionForm = () => {
           </div>
         </div>
       </div>
-      <button type="submit">Zaproponuj gościa</button>
+      <div className="flex w-full justify-center pt-8">
+        <button
+          type="submit"
+          className="rounded-md border border-transparent bg-brand px-4 py-2.5 text-sm font-bold leading-6 text-brand text-zinc-50 shadow-sm  outline-none ring-1 ring-inset ring-zinc-300 transition-colors duration-200 ease-in-out placeholder:text-gray-400 hover:bg-orange-700 focus:ring-2 focus:ring-orange-600 focus:ring-offset-2 active:text-orange-900 lg:inline-block"
+        >
+          Zaproponuj gościa
+        </button>
+      </div>
     </form>
   )
 }
