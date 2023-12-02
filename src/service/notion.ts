@@ -5,7 +5,7 @@ import { redirect } from 'next/navigation'
 
 const notion = new Client({ auth: process.env.NOTION_TOKEN })
 
-export const getDb = async (data: FormData) => {
+export const suggestGuest = async (data: FormData) => {
   const name = (data.get('name') as string) ?? ''
   const who = (data.get('who') as string) ?? ''
   const surname = (data.get('surname') as string) ?? ''
@@ -16,39 +16,33 @@ export const getDb = async (data: FormData) => {
 
   if (!databaseId) throw new Error('Database ID not found')
 
-  try {
-    const res = await notion.pages.create({
-      parent: {
-        database_id: databaseId,
-      },
-      properties: {
-        Name: {
-          title: [
-            {
-              text: {
-                content: `${name} ${surname}`,
-              },
+  const res = await notion.pages.create({
+    parent: {
+      database_id: databaseId,
+    },
+    properties: {
+      Name: {
+        title: [
+          {
+            text: {
+              content: `${name} ${surname}`,
             },
-          ],
-        },
-        Email: {
-          email: email,
-        },
-        'Additional Info': {
-          rich_text: [
-            {
-              text: {
-                content: `Proponuję: ${who}\n ${message}`,
-              },
-            },
-          ],
-        },
+          },
+        ],
       },
-    })
-    redirect('/sugestia-podziekowanie')
-  } catch (error: unknown) {
-    if (error instanceof Error) {
-      throw new Error(error.message)
-    }
-  }
+      Email: {
+        email: email,
+      },
+      'Additional Info': {
+        rich_text: [
+          {
+            text: {
+              content: `Proponuję: ${who}\n ${message}`,
+            },
+          },
+        ],
+      },
+    },
+  })
+  redirect('/sugestia-podziekowanie')
 }
