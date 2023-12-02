@@ -87,7 +87,7 @@ export default function MainLayout({
 
   return (
     <AudioProvider>
-      <header className="bg-zinc-50 lg:fixed lg:inset-y-0 lg:left-0 lg:flex lg:w-112 lg:items-start lg:overflow-y-auto xl:w-120">
+      <header className="lg:w-112 xl:w-120 bg-zinc-50 lg:fixed lg:inset-y-0 lg:left-0 lg:flex lg:items-start lg:overflow-y-auto">
         <div className="hidden lg:sticky lg:top-0 lg:flex lg:w-16 lg:flex-none lg:items-center lg:whitespace-nowrap lg:py-12 lg:text-sm lg:leading-7 lg:[writing-mode:vertical-rl]">
           <span className="font-mono text-zinc-500">
             Tworzony z pasją przez
@@ -163,9 +163,39 @@ export default function MainLayout({
               ))}
             </ul>
           </section>
+          <section className="mt-10 lg:mt-12">
+            <Link
+              className="sr-only flex items-center font-mono text-sm font-medium leading-7 text-zinc-900 lg:not-sr-only"
+              href={'/'}
+              type="button"
+            >
+              <TinyWaveFormIcon
+                colors={['fill-zinc-400', 'fill-brand']}
+                className="h-2.5 w-2.5"
+              />
+              <span className="text-brand ml-2.5 hidden text-sm font-bold leading-6 hover:text-orange-700 active:text-orange-900 lg:inline-block">
+                Odcinki
+              </span>
+            </Link>
+            <div className="h-px bg-gradient-to-r from-zinc-200/0 via-zinc-200 to-zinc-200/0 lg:hidden" />
+            <Link
+              className="sr-only flex items-center font-mono text-sm font-medium leading-7 text-zinc-900 lg:not-sr-only"
+              href={'/zaproponuj-goscia'}
+              type="button"
+            >
+              <TinyWaveFormIcon
+                colors={['fill-zinc-400', 'fill-brand']}
+                className="h-2.5 w-2.5"
+              />
+              <span className="text-brand ml-2.5 hidden text-sm font-bold leading-6 hover:text-orange-700 active:text-orange-900 lg:inline-block">
+                Zaproponuj gościa
+              </span>
+            </Link>
+            <div className="h-px bg-gradient-to-r from-zinc-200/0 via-zinc-200 to-zinc-200/0 lg:hidden" />
+          </section>
         </div>
       </header>
-      <main className="border-t border-zinc-200 lg:relative lg:mb-28 lg:ml-112 lg:border-t-0 xl:ml-120">
+      <main className="lg:ml-112 xl:ml-120 border-t border-zinc-200 lg:relative lg:mb-28 lg:border-t-0">
         <Waveform className="absolute left-0 top-0 h-20 w-full" />
         <div className="relative">{children}</div>
       </main>
@@ -190,7 +220,7 @@ export default function MainLayout({
           </div>
         </div>
       </footer>
-      <div className="fixed inset-x-0 bottom-0 z-10 lg:left-112 xl:left-120">
+      <div className="lg:left-112 xl:left-120 fixed inset-x-0 bottom-0 z-10">
         <AudioPlayer />
       </div>
     </AudioProvider>
