@@ -87,7 +87,7 @@ export default function MainLayout({
 
   return (
     <AudioProvider>
-      <header className="lg:w-112 xl:w-120 bg-zinc-50 lg:fixed lg:inset-y-0 lg:left-0 lg:flex lg:items-start lg:overflow-y-auto">
+      <header className="bg-zinc-50 lg:fixed lg:inset-y-0 lg:left-0 lg:flex lg:w-112 lg:items-start lg:overflow-y-auto xl:w-120">
         <div className="hidden lg:sticky lg:top-0 lg:flex lg:w-16 lg:flex-none lg:items-center lg:whitespace-nowrap lg:py-12 lg:text-sm lg:leading-7 lg:[writing-mode:vertical-rl]">
           <span className="font-mono text-zinc-500">
             Tworzony z pasją przez
@@ -162,46 +162,73 @@ export default function MainLayout({
                 </li>
               ))}
             </ul>
-          </section>
-          <section className="mt-10 lg:mt-12">
-            <Link
-              className="sr-only flex items-center font-mono text-sm font-medium leading-7 text-zinc-900 lg:not-sr-only"
-              href={'/'}
-              type="button"
+            <ul
+              role="list"
+              className="mt-4 hidden items-center justify-center gap-10 text-base font-medium leading-7 text-zinc-700 sm:gap-8 lg:ml-1 lg:flex lg:flex-col lg:items-start lg:gap-4"
             >
-              <TinyWaveFormIcon
-                colors={['fill-zinc-400', 'fill-brand']}
-                className="h-2.5 w-2.5"
-              />
-              <span className="text-brand ml-2.5 hidden text-sm font-bold leading-6 hover:text-orange-700 active:text-orange-900 lg:inline-block">
-                Odcinki
-              </span>
-            </Link>
-            <div className="h-px bg-gradient-to-r from-zinc-200/0 via-zinc-200 to-zinc-200/0 lg:hidden" />
-            <Link
-              className="sr-only flex items-center font-mono text-sm font-medium leading-7 text-zinc-900 lg:not-sr-only"
-              href={'/zaproponuj-goscia'}
-              type="button"
-            >
-              <TinyWaveFormIcon
-                colors={['fill-zinc-400', 'fill-brand']}
-                className="h-2.5 w-2.5"
-              />
-              <span className="text-brand ml-2.5 hidden text-sm font-bold leading-6 hover:text-orange-700 active:text-orange-900 lg:inline-block">
-                Zaproponuj gościa
-              </span>
-            </Link>
-            <div className="h-px bg-gradient-to-r from-zinc-200/0 via-zinc-200 to-zinc-200/0 lg:hidden" />
+              <Link
+                className="flex items-center font-mono text-sm font-medium leading-7 text-zinc-900"
+                href={'/'}
+                type="button"
+              >
+                <TinyWaveFormIcon
+                  colors={['fill-zinc-400', 'fill-brand']}
+                  className="hidden h-2.5 w-2.5 lg:inline-block"
+                />
+                <span className="text-sm font-bold leading-6 text-brand hover:text-orange-700 active:text-orange-900 lg:ml-2.5 lg:inline-block">
+                  Odcinki
+                </span>
+              </Link>
+              <Link
+                className="flex items-center font-mono text-sm font-medium leading-7 text-zinc-900"
+                href={'/zaproponuj-goscia'}
+                type="button"
+              >
+                <TinyWaveFormIcon
+                  colors={['fill-zinc-400', 'fill-brand']}
+                  className="hidden h-2.5 w-2.5 lg:inline-block"
+                />
+                <span className="text-sm font-bold leading-6 text-brand hover:text-orange-700 active:text-orange-900 lg:ml-2.5 lg:inline-block">
+                  Zaproponuj gościa
+                </span>
+              </Link>
+            </ul>
           </section>
         </div>
       </header>
-      <main className="lg:ml-112 xl:ml-120 border-t border-zinc-200 lg:relative lg:mb-28 lg:border-t-0">
+      <main className="border-t border-zinc-200 lg:relative lg:mb-28 lg:ml-112 lg:border-t-0 xl:ml-120">
         <Waveform className="absolute left-0 top-0 h-20 w-full" />
         <div className="relative">{children}</div>
       </main>
       <footer className="border-t border-zinc-200 bg-zinc-50 py-10 pb-40 sm:py-16 sm:pb-32 lg:hidden">
         <div className="mx-auto px-4 sm:px-6 md:max-w-2xl md:px-4">
           <AboutSection />
+          <Link
+            className="mt-4 flex items-center font-mono text-sm font-medium leading-7 text-zinc-900"
+            href={'/'}
+            type="button"
+          >
+            <TinyWaveFormIcon
+              colors={['fill-zinc-400', 'fill-brand']}
+              className="h-2.5 w-2.5 lg:block"
+            />
+            <span className="ml-2.5 text-sm font-bold leading-6 text-brand hover:text-orange-700 active:text-orange-900 lg:inline-block">
+              Odcinki
+            </span>
+          </Link>
+          <Link
+            className="mt-4 flex items-center font-mono text-sm font-medium leading-7 text-zinc-900"
+            href={'/zaproponuj-goscia'}
+            type="button"
+          >
+            <TinyWaveFormIcon
+              colors={['fill-zinc-400', 'fill-brand']}
+              className="h-2.5 w-2.5 lg:block"
+            />
+            <span className="ml-2.5 text-sm font-bold leading-6 text-brand hover:text-orange-700 active:text-orange-900 lg:inline-block">
+              Zaproponuj gościa
+            </span>
+          </Link>
           <h2 className="mt-8 flex items-center font-mono text-sm font-medium leading-7 text-zinc-900">
             <PersonIcon className="h-3 w-auto fill-zinc-300" />
             <span className="ml-2.5">Tworzony z pasją przez</span>
@@ -220,7 +247,7 @@ export default function MainLayout({
           </div>
         </div>
       </footer>
-      <div className="lg:left-112 xl:left-120 fixed inset-x-0 bottom-0 z-10">
+      <div className="fixed inset-x-0 bottom-0 z-10 lg:left-112 xl:left-120">
         <AudioPlayer />
       </div>
     </AudioProvider>
