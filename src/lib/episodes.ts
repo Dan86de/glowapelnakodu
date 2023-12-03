@@ -14,43 +14,60 @@ export interface Episode {
 }
 
 export async function getAllEpisodes() {
-  let FeedSchema = object({
-    items: array(
-      object({
-        id: number(),
-        title: string(),
-        published: number(),
-        description: string(),
-        content: string(),
-        enclosures: array(
-          object({
-            url: string(),
-            type: string(),
-          }),
-        ),
-      }),
-    ),
-  })
+  type Enclosure = {
+    url: string
+    type: string
+    length: number
+  }
 
-  let feed = (await parseFeed(
+  let feed = await parseFeed(
     'https://www.spreaker.com/show/6021143/episodes/feed',
     // 'https://their-side-feed.vercel.app/api/feed',
-  )) as unknown
-  let items = parse(FeedSchema, feed).items
+  )
+
+  let items = feed.items
 
   let episodes: Array<Episode> = items.map(
     ({ id, title, description, content, enclosures, published }) => ({
-      id,
-      title: `${id}: ${title}`,
+      id: id.split('/')[4],
+      title,
       published: new Date(published),
-      description,
-      content,
-      audio: enclosures.map((enclosure) => ({
+      description: transformHtmlString(description).split('NOTATKI\n')[0],
+      content: transformHtmlString(description).split('NOTATKI\n')[1],
+      audio: enclosures.map((enclosure: Enclosure) => ({
         src: enclosure.url,
         type: enclosure.type,
       }))[0],
     }),
   )
 
+  console.log({ episodes })
+
   return episodes
 }
+
+function transformHtmlString(input: string): string {
+  // Define replacements for various HTML elements
+  const replacements: { [key: string]: string } = {
+    '<br />': '\n',
+    '</ul>': '\n</ul>\n',
+    '<ul>': '<ul>\n',
+    '<li>': '<li>',
+    '</li>': '</li>\n',
+  }
+
+  // Replace HTML tags with the corresponding replacements
+  let transformed = input.replace(
+    /<br \/>|<\/?ul>|<\/?li>/g,
+    (match) => replacements[match] || '',
+  )
+
+  transformed = transformed.replace(
+    '<ul>',
+    '<h2 id="topics">Poruszane zagadnienia</h2>\n<ul>',
+  )
+
+  return transformed
+}
+
+// TODO: ulepszyć logikę parsowania feeda

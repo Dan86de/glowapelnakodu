@@ -144,15 +144,19 @@ export default function MainLayout({
             >
               {(
                 [
-                  ['Spotify', SpotifyIcon],
-                  ['Apple Podcast', ApplePodcastIcon],
-                  ['Overcast', OvercastIcon],
-                  ['RSS Feed', RSSIcon],
+                  ['Spotify', SpotifyIcon, '/'],
+                  ['Apple Podcast', ApplePodcastIcon, '/'],
+                  ['Overcast', OvercastIcon, '/'],
+                  [
+                    'RSS Feed',
+                    RSSIcon,
+                    'https://www.spreaker.com/show/6021143/episodes/feed',
+                  ],
                 ] as const
-              ).map(([label, Icon]) => (
+              ).map(([label, Icon, href]) => (
                 <li key={label} className="flex">
                   <Link
-                    href="/"
+                    href={href}
                     className="group flex items-center"
                     aria-label={label}
                   >
