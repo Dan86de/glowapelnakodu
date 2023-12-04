@@ -150,11 +150,7 @@ export default function MainLayout({
                     'https://open.spotify.com/show/3UvVQ6BiskvnXBP9ky0PgX',
                   ],
                   ['Apple Podcast', ApplePodcastIcon, '/'],
-                  [
-                    'Overcast',
-                    OvercastIcon,
-                    'https://www.spreaker.com/show/glowa-pelna-kodu',
-                  ],
+                  ['Overcast', OvercastIcon, 'https://overcast.fm/BFdzRN1D3M'],
                   [
                     'RSS Feed',
                     RSSIcon,
