@@ -144,9 +144,17 @@ export default function MainLayout({
             >
               {(
                 [
-                  ['Spotify', SpotifyIcon, '/'],
+                  [
+                    'Spotify',
+                    SpotifyIcon,
+                    'https://open.spotify.com/show/3UvVQ6BiskvnXBP9ky0PgX',
+                  ],
                   ['Apple Podcast', ApplePodcastIcon, '/'],
-                  ['Overcast', OvercastIcon, '/'],
+                  [
+                    'Overcast',
+                    OvercastIcon,
+                    'https://www.spreaker.com/show/glowa-pelna-kodu',
+                  ],
                   [
                     'RSS Feed',
                     RSSIcon,
