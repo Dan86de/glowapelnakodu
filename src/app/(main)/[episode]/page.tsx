@@ -32,6 +32,8 @@ export async function generateMetadata({
     title: episode.title,
     description: episode.description,
     openGraph: {
+      title: episode.title,
+      description: episode.description,
       audio: {
         url: episode.audio.src,
         type: episode.audio.type,
