@@ -6,7 +6,7 @@ import { EpisodePlayButton } from '@/components/EpisodePlayButton'
 import { FormattedDate } from '@/components/FormattedDate'
 import { PauseIcon } from '@/components/PauseIcon'
 import { PlayIcon } from '@/components/PlayIcon'
-import { getAllEpisodes, transformHtmlString } from '@/lib/episodes'
+import { getAllEpisodes } from '@/lib/episodes'
 import { Metadata } from 'next'
 
 const getEpisode = cache(async (id: string) => {
@@ -26,12 +26,12 @@ export async function generateMetadata({
   params: { episode: string }
 }): Promise<Metadata> {
   let episode = await getEpisode(params.episode)
+  console.log({ episode })
 
   return {
     title: episode.title,
-    description: transformHtmlString(episode.description).split('NOTATKI\n')[1],
+    description: episode.description,
     openGraph: {
-      type: 'music.radio_station',
       audio: {
         url: episode.audio.src,
         type: episode.audio.type,
