@@ -26,7 +26,6 @@ export async function generateMetadata({
   params: { episode: string }
 }): Promise<Metadata> {
   let episode = await getEpisode(params.episode)
-  console.log({ episode })
 
   return {
     title: episode.title,
