@@ -36,14 +36,6 @@ export async function generateMetadata({
         url: episode.audio.src,
         type: episode.audio.type,
       },
-      images: [
-        {
-          url: '../../opengraph-image.png',
-          width: 1200,
-          height: 630,
-          alt: episode.title,
-        },
-      ],
     },
   }
 }
