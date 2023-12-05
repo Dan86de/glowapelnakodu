@@ -27,15 +27,12 @@ export async function generateMetadata({
 }): Promise<Metadata> {
   let episode = await getEpisode(params.episode)
 
-  const previousImages = (await parent).openGraph?.images || []
-
   return {
     title: episode.title,
     description: episode.description,
     openGraph: {
       title: episode.title,
       description: episode.description,
-      images: [...previousImages],
       audio: {
         url: episode.audio.src,
         type: episode.audio.type,
