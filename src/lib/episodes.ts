@@ -1,5 +1,4 @@
 import { parse as parseFeed } from 'rss-to-json'
-import { array, number, object, parse, string } from 'valibot'
 
 export interface Episode {
   id: number
@@ -41,12 +40,10 @@ export async function getAllEpisodes() {
     }),
   )
 
-  console.log({ episodes })
-
   return episodes
 }
 
-function transformHtmlString(input: string): string {
+export function transformHtmlString(input: string): string {
   // Define replacements for various HTML elements
   const replacements: { [key: string]: string } = {
     '<br />': '\n',

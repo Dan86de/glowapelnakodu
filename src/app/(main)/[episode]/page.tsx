@@ -1,12 +1,13 @@
-import { cache } from 'react'
 import { notFound } from 'next/navigation'
+import { cache } from 'react'
 
 import { Container } from '@/components/Container'
 import { EpisodePlayButton } from '@/components/EpisodePlayButton'
 import { FormattedDate } from '@/components/FormattedDate'
 import { PauseIcon } from '@/components/PauseIcon'
 import { PlayIcon } from '@/components/PlayIcon'
-import { getAllEpisodes } from '@/lib/episodes'
+import { getAllEpisodes, transformHtmlString } from '@/lib/episodes'
+import { Metadata } from 'next'
 
 const getEpisode = cache(async (id: string) => {
   let allEpisodes = await getAllEpisodes()
@@ -23,11 +24,27 @@ export async function generateMetadata({
   params,
 }: {
   params: { episode: string }
-}) {
+}): Promise<Metadata> {
   let episode = await getEpisode(params.episode)
 
   return {
     title: episode.title,
+    description: transformHtmlString(episode.description).split('NOTATKI\n')[1],
+    openGraph: {
+      type: 'music.radio_station',
+      audio: {
+        url: episode.audio.src,
+        type: episode.audio.type,
+      },
+      images: [
+        {
+          url: '../../opengraph-image.png',
+          width: 1200,
+          height: 630,
+          alt: episode.title,
+        },
+      ],
+    },
   }
 }
 
