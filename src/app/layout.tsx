@@ -1,3 +1,4 @@
+import { Analytics } from '@vercel/analytics/react'
 import { type Metadata } from 'next'
 
 import '@/styles/tailwind.css'
@@ -54,7 +55,10 @@ export default function RootLayout({
         <meta name="theme-color" content="#ffffff"></meta>
       </head>
       <body className="flex min-h-full">
-        <div className="w-full">{children}</div>
+        <div className="w-full">
+          {children}
+          <Analytics />
+        </div>
       </body>
     </html>
   )
