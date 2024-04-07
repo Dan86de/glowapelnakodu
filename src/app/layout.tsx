@@ -12,7 +12,12 @@ export const metadata: Metadata = {
   },
   description: `Podcast dla programistów, którzy marzą o stworzeniu własnego biznesu, tworzony przez programistę. Jako samouk, który przeszedł drogę od branży samochodowej do świata technologii, dzielę się unikalną perspektywą na zmianę branży, naukę programowania i tworzenie własnych produktów.`,
   openGraph: {
-    images: '/opengraph-image.png',
+    images: {
+      url:'/OG_GPK_1200_630.webp',
+      width: 1200,
+      height: 1630,
+      alt: "Głowa pełna kodu - Podcast",
+    }
   },
 }
 
