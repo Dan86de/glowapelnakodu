@@ -200,6 +200,19 @@ export default function MainLayout({
                   Zaproponuj gościa
                 </span>
               </Link>
+              <Link
+                  className="flex items-center font-mono text-sm font-medium leading-7 text-zinc-900"
+                  href={'https://danielnoworyta.pl/newsletter'}
+                  type="button"
+              >
+                <TinyWaveFormIcon
+                    colors={['fill-zinc-400', 'fill-brand']}
+                    className="hidden h-2.5 w-2.5 lg:inline-block"
+                />
+                <span className="text-sm font-bold leading-6 text-brand hover:text-orange-700 active:text-orange-900 lg:ml-2.5 lg:inline-block">
+                  Zapis na newsletter
+                </span>
+              </Link>
             </ul>
           </section>
         </div>
@@ -235,6 +248,19 @@ export default function MainLayout({
             />
             <span className="ml-2.5 text-sm font-bold leading-6 text-brand hover:text-orange-700 active:text-orange-900 lg:inline-block">
               Zaproponuj gościa
+            </span>
+          </Link>
+          <Link
+              className="mt-4 flex items-center font-mono text-sm font-medium leading-7 text-zinc-900"
+              href={'https://danielnoworyta.pl/newsletter'}
+              type="button"
+          >
+            <TinyWaveFormIcon
+                colors={['fill-zinc-400', 'fill-brand']}
+                className="h-2.5 w-2.5 lg:block"
+            />
+            <span className="ml-2.5 text-sm font-bold leading-6 text-brand hover:text-orange-700 active:text-orange-900 lg:inline-block">
+              Zapis na newsletter
             </span>
           </Link>
           <h2 className="mt-8 flex items-center font-mono text-sm font-medium leading-7 text-zinc-900">
