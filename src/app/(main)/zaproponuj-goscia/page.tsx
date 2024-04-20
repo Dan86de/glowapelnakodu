@@ -17,11 +17,12 @@ export default async function GuestSuggestion() {
             temat:
           </p>
           <ul className="list-disc pt-2">
-            <li>budowania i rozwoju swoich produktów</li>
-            <li>pozyskiwania użytkowników</li>
-            <li>zwiększania sprzedaży</li>
-            <li>walidowania pomysłów biznesowych</li>
-            <li>zmianę branży i naukę programowania</li>
+            <li>produktywności</li>
+            <li>nauce programowania</li>
+            <li>zdobywaniu pierwszej pracy</li>
+            <li>przekwalifikowaniu się na IT</li>
+            <li>budowaniu swojego brandu w IT</li>
+            <li>zdobywaniu i rozwijaniu umiejętności miękkich</li>
           </ul>
           <GuestSuggestionForm />
         </Container>
