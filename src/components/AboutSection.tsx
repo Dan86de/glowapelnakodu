@@ -23,7 +23,7 @@ export function AboutSection(props: React.ComponentPropsWithoutRef<'section'>) {
           !isExpanded && 'lg:line-clamp-4',
         )}
       >
-        Podcast dla programistów, którzy marzą o stworzeniu własnego biznesu, tworzony przez programistę. Jako samouk, który przeszedł drogę od branży samochodowej do świata technologii, dzielę się unikalną perspektywą na zmianę branży, naukę programowania i tworzenie własnych produktów.
+          Podcast o tematach związanych z rozwojem kariery w IT, zmianą branży na IT, programowaniem dla początkujących, skutecznymi technikami nauki, rozwijaniu umiejętności miękkich w IT, oraz o równowadze między życiem zawodowym a prywatnym dla programistów.
       </p>
       {!isExpanded && (
         <button
