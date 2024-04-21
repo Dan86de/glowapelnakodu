@@ -24,7 +24,7 @@ export default function NotFound() {
           </Link>
           lub zapisem na newsletter{' '}
           <Link
-            href="https://programistafrontend.pl"
+            href="https://danielnoworyta.pl/newsletter"
             className="text-brand mt-4 text-sm font-bold leading-6 hover:text-orange-700 active:text-orange-900"
           >
             Programistafrontend.

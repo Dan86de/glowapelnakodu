@@ -7,9 +7,11 @@ export const metadata: Metadata = {
   metadataBase: new URL('https://glowapelnakodu.pl'),
   title: {
     template: 'Głowa pełna kodu',
-    default: `Głowa pełna kodu - Podcast o tym jak się przekwalifikować i zdobyć pracę w branży IT`,
+    default: `Głowa pełna kodu - Podcast o nauce programowania dla początkujących i zmianie branży na IT.`,
   },
-  description: `Podcast o tematach związanych z rozwojem kariery w IT, zmianą branży na IT, programowaniem dla początkujących, skutecznymi technikami nauki, rozwijaniu umiejętności miękkich w IT, oraz o równowadze między życiem zawodowym a prywatnym dla programistów.`,
+  description: `
+  Podcast o nauce programowania dla początkujących, zmianie branży na IT, przekwalifikowaniu się na programistę, zdobywaniu pierwszej pracy w IT, budowaniu swojego brandu w IT, zdobywaniu i rozwijaniu umiejętności miękkich w IT, oraz o równowadze między życiem zawodowym a prywatnym dla programistów.
+  `,
   openGraph: {
     images: {
       url:'/OG_GPK_1200_630.webp',
