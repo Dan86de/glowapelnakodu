@@ -15,7 +15,7 @@ export default function NotFound() {
           Sorry, nie znalazłem strony którą szukasz.
         </p>
         <p>
-          Być moze będziesz zainteresowany najnowszym filmem na kanale{' '}
+          Być może będziesz zainteresowany najnowszym filmem na kanale{' '}
           <Link
             href="https://youtube.com/c/danielnoworyta"
             className="text-brand mt-4 text-sm font-bold leading-6 hover:text-orange-700 active:text-orange-900"

@@ -23,7 +23,7 @@ export function AboutSection(props: React.ComponentPropsWithoutRef<'section'>) {
           !isExpanded && 'lg:line-clamp-4',
         )}
       >
-          Podcast o tematach związanych z rozwojem kariery w IT, zmianą branży na IT, programowaniem dla początkujących, skutecznymi technikami nauki, rozwijaniu umiejętności miękkich w IT, oraz o równowadze między życiem zawodowym a prywatnym dla programistów.
+          Podcast o nauce programowania dla początkujących, zmianie branży na IT, przekwalifikowaniu się na programistę, zdobywaniu pierwszej pracy w IT, budowaniu swojego brandu w IT, zdobywaniu i rozwijaniu umiejętności miękkich w IT, oraz o równowadze między życiem zawodowym a prywatnym dla programistów.
       </p>
       {!isExpanded && (
         <button
