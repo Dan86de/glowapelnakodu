@@ -20,6 +20,12 @@ const getEpisode = cache(async (id: string) => {
   return episode
 })
 
+function makeUrlsClickable(text:string) {
+  const urlRegex = /(http[s]?:\/\/[^\s<]+)/g;
+  const transformedText = text.replace(urlRegex, '<a href="$&" target="_blank" rel="noopener noreferrer" style="text-decoration: underline; color: rgb(234 88 12 / var(--tw-bg-opacity))">$&</a>');
+  return transformedText;
+}
+
 export async function generateMetadata({
   params,
 }: {
@@ -80,8 +86,8 @@ export default async function Episode({
         </header>
         <hr className="my-12 border-gray-200" />
         <div
-          className="prose prose-zinc mt-14 [&>h2:nth-of-type(3n)]:before:bg-violet-200 [&>h2:nth-of-type(3n+2)]:before:bg-indigo-200 [&>h2]:mt-12 [&>h2]:flex [&>h2]:items-center [&>h2]:font-mono [&>h2]:text-sm [&>h2]:font-medium [&>h2]:leading-7 [&>h2]:text-zinc-900 [&>h2]:before:mr-3 [&>h2]:before:h-3 [&>h2]:before:w-1.5 [&>h2]:before:rounded-r-full [&>h2]:before:bg-cyan-200 [&>ul]:mt-6 [&>ul]:list-['\2013\20'] [&>ul]:pl-5"
-          dangerouslySetInnerHTML={{ __html: episode.content }}
+          className="prose prose-zinc [&>h2:nth-of-type(3n)]:before:bg-orange-600 [&>h2:nth-of-type(3n+2)]:before:bg-orange-600 [&>h2]:flex [&>h2]:items-center [&>h2]:font-mono [&>h2]:text-sm [&>h2]:font-bold [&>h2]:leading-7 [&>h2]:text-zinc-900 [&>h2]:before:mr-3 [&>h2]:before:h-3 [&>h2]:before:w-1.5 [&>h2]:before:rounded-r-full [&>h2]:before:bg-orange-600 [&>ul]:mt-2 [&>ul]:list-['\2013\20'] [&>ul]:pl-5 [&>a]:underline"
+          dangerouslySetInnerHTML={{ __html: makeUrlsClickable(episode.content) }}
         />
       </Container>
     </article>

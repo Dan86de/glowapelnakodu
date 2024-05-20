@@ -21,50 +21,50 @@ export async function getAllEpisodes() {
 
   let feed = await parseFeed(
     'https://www.spreaker.com/show/6021143/episodes/feed',
-    // 'https://their-side-feed.vercel.app/api/feed',
   )
 
   let items = feed.items
 
   let episodes: Array<Episode> = items.map(
-    ({ id, title, description, content, enclosures, published }) => ({
-      id: id.split('/')[4],
-      title,
-      published: new Date(published),
-      description: transformHtmlString(description).split('NOTATKI\n')[0],
-      content: transformHtmlString(description).split('NOTATKI\n')[1],
-      audio: enclosures.map((enclosure: Enclosure) => ({
-        src: enclosure.url,
-        type: enclosure.type,
-      }))[0],
-    }),
+    ({ id, title, description, content, enclosures, published }) => {
+
+
+      const episodeInfo = {
+        id: id.split('/')[4],
+        title,
+        published: new Date(published),
+        description: description.split(`NOTATKI`)[0].replace(/<[^>]*>/g, ''),
+        content: transformHtmlString(`NOTATKI${description.split('NOTATKI')[1]}`),
+        audio: enclosures.map((enclosure: Enclosure) => ({
+          src: enclosure.url,
+          type: enclosure.type,
+        }))[0],
+      }
+
+    },
   )
 
   return episodes
 }
 
 export function transformHtmlString(input: string): string {
-  // Define replacements for various HTML elements
-  const replacements: { [key: string]: string } = {
-    '<br />': '\n',
-    '</ul>': '\n</ul>\n',
-    '<ul>': '<ul>\n',
-    '<li>': '<li>',
-    '</li>': '</li>\n',
-  }
+  let transformed = input
 
-  // Replace HTML tags with the corresponding replacements
-  let transformed = input.replace(
-    /<br \/>|<\/?ul>|<\/?li>/g,
-    (match) => replacements[match] || '',
+  transformed = transformed.replace(
+    'NOTATKI',
+    '<h2 id="topics">Opis odcinka</h2>',
   )
 
   transformed = transformed.replace(
-    '<ul>',
-    '<h2 id="topics">Poruszane zagadnienia</h2>\n<ul>',
+      'ROZDZIAŁY',
+      '<h2 id="sponsors">Główne zagadnienia</h2>',
+  )
+
+  transformed = transformed.replace(
+      'LINKI',
+      '<h2 id="links">Linki</h2>',
   )
 
   return transformed
 }
 
-// TODO: ulepszyć logikę parsowania feeda
