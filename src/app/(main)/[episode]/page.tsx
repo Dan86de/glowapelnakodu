@@ -10,8 +10,9 @@ import { getAllEpisodes } from '@/lib/episodes'
 import { Metadata } from 'next'
 
 const getEpisode = cache(async (id: string) => {
-  let allEpisodes = await getAllEpisodes()
-  let episode = allEpisodes.find((episode) => episode.id.toString() === id)
+  const allEpisodes = await getAllEpisodes()
+
+  const episode = allEpisodes[parseInt(id)-1]
 
   if (!episode) {
     notFound()
@@ -32,7 +33,7 @@ export async function generateMetadata({
   params: { episode: string }
 }): Promise<Metadata> {
   let episode = await getEpisode(params.episode)
-
+  
   return {
     title: episode.title,
     description: episode.description,
@@ -86,7 +87,8 @@ export default async function Episode({
         </header>
         <hr className="my-12 border-gray-200" />
         <div
-          className="prose prose-zinc [&>h2:nth-of-type(3n)]:before:bg-orange-600 [&>h2:nth-of-type(3n+2)]:before:bg-orange-600 [&>h2]:flex [&>h2]:items-center [&>h2]:font-mono [&>h2]:text-sm [&>h2]:font-bold [&>h2]:leading-7 [&>h2]:text-zinc-900 [&>h2]:before:mr-3 [&>h2]:before:h-3 [&>h2]:before:w-1.5 [&>h2]:before:rounded-r-full [&>h2]:before:bg-orange-600 [&>ul]:mt-2 [&>ul]:list-['\2013\20'] [&>ul]:pl-5 [&>a]:underline"
+          className="prose prose-zinc [&>h2:nth-of-type(3n)]:before:bg-orange-600 [&>h2:nth-of-type(3n+2)]:before:bg-orange-600 [&>h2]:flex [&>h2]:items-center
+           [&>h2]:mt-4 [&>h2]:font-mono [&>h2]:text-sm [&>h2]:font-bold [&>h2]:leading-7 [&>h2]:text-zinc-900 [&>h2]:before:mr-3 [&>h2]:before:h-3 [&>h2]:before:w-1.5 [&>h2]:before:rounded-r-full [&>h2]:before:bg-orange-600 [&>ul]:mt-2 [&>ul]:list-['\2013\20'] [&>ul]:pl-5 [&>a]:underline"
           dangerouslySetInnerHTML={{ __html: makeUrlsClickable(episode.content) }}
         />
       </Container>

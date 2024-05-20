@@ -25,21 +25,21 @@ function PlayIcon(props: React.ComponentPropsWithoutRef<'svg'>) {
   )
 }
 
-function EpisodeEntry({ episode }: { episode: Episode }) {
+function EpisodeEntry({ episode,episodeNumber }: { episode: Episode, episodeNumber: number}) {
   let date = new Date(episode.published)
 
   return (
     <article
-      aria-labelledby={`episode-${episode.id}-title`}
+      aria-labelledby={`episode-${episodeNumber}-title`}
       className="py-10 sm:py-12"
     >
       <Container>
         <div className="flex flex-col items-start">
           <h2
-            id={`episode-${episode.id}-title`}
+            id={`episode-${episodeNumber}-title`}
             className="mt-2 text-lg font-bold text-zinc-900"
           >
-            <Link href={`/${episode.id}`}>{episode.title}</Link>
+            <Link href={`/${episodeNumber}`}>{episode.title}</Link>
           </h2>
           <FormattedDate
             date={date}
@@ -72,9 +72,9 @@ function EpisodeEntry({ episode }: { episode: Episode }) {
               /
             </span>
             <Link
-              href={`/${episode.id}`}
+              href={`/${episodeNumber}`}
               className="text-brand flex items-center text-sm font-bold leading-6 hover:text-orange-700 active:text-orange-900"
-              aria-label={`Show notes for episode ${episode.title}`}
+              aria-label={`Notatki do odcinka ${episode.title}`}
             >
               Notatki do odcinka
             </Link>
@@ -94,9 +94,9 @@ export default async function Home() {
         <h1 className="text-2xl font-bold leading-7 text-zinc-900">Odcinki</h1>
       </Container>
       <div className="divide-y divide-zinc-100 sm:mt-4 lg:mt-8 lg:border-t lg:border-zinc-100">
-        {episodes.map((episode) => (
-          <EpisodeEntry key={episode.id} episode={episode} />
-        ))}
+        {episodes.map((episode,index) => (
+          <EpisodeEntry key={episode.id} episode={episode} episodeNumber={index+1} />
+        )).reverse()}
       </div>
     </div>
   )

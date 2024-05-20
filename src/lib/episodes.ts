@@ -44,7 +44,7 @@ export async function getAllEpisodes() {
     },
   )
 
-  return episodes
+  return episodes.reverse()
 }
 
 export function transformHtmlString(input: string): string {
