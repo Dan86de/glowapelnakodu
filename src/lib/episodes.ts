@@ -40,7 +40,7 @@ export async function getAllEpisodes() {
           type: enclosure.type,
         }))[0],
       }
-
+      return episodeInfo
     },
   )
 
