@@ -33,7 +33,7 @@ export async function generateMetadata({
   params: { episode: string }
 }): Promise<Metadata> {
   let episode = await getEpisode(params.episode)
-  
+
   return {
     title: episode.title,
     description: episode.description,

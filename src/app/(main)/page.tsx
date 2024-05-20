@@ -39,7 +39,7 @@ function EpisodeEntry({ episode,episodeNumber }: { episode: Episode, episodeNumb
             id={`episode-${episodeNumber}-title`}
             className="mt-2 text-lg font-bold text-zinc-900"
           >
-            <Link href={`/${episodeNumber}`}>{episode.title}</Link>
+            <Link href={`/${episode.season}/${episodeNumber}`}>{episode.title}</Link>
           </h2>
           <FormattedDate
             date={date}
@@ -72,7 +72,7 @@ function EpisodeEntry({ episode,episodeNumber }: { episode: Episode, episodeNumb
               /
             </span>
             <Link
-              href={`/${episodeNumber}`}
+              href={`/${episode.season}/${episodeNumber}`}
               className="text-brand flex items-center text-sm font-bold leading-6 hover:text-orange-700 active:text-orange-900"
               aria-label={`Notatki do odcinka ${episode.title}`}
             >

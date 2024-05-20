@@ -2,6 +2,7 @@ import { parse as parseFeed } from 'rss-to-json'
 
 export interface Episode {
   id: number
+  season: number
   title: string
   published: Date
   description: string
@@ -26,11 +27,12 @@ export async function getAllEpisodes() {
   let items = feed.items
 
   let episodes: Array<Episode> = items.map(
-    ({ id, title, description, content, enclosures, published }) => {
+    ({ id, title, description, content, enclosures, published,itunes_season }) => {
 
 
       const episodeInfo = {
         id: id.split('/')[4],
+        season: itunes_season,
         title,
         published: new Date(published),
         description: description.split(`NOTATKI`)[0].replace(/<[^>]*>/g, ''),
