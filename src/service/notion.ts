@@ -21,7 +21,7 @@ export const suggestGuest = async (data: FormData) => {
       database_id: databaseId,
     },
     properties: {
-      Name: {
+      'Imię': {
         title: [
           {
             text: {
@@ -30,7 +30,7 @@ export const suggestGuest = async (data: FormData) => {
           },
         ],
       },
-      Email: {
+      'Adres Email': {
         email: email,
       },
       'Additional Info': {
@@ -45,4 +45,5 @@ export const suggestGuest = async (data: FormData) => {
     },
   })
   redirect('/sugestia-podziekowanie')
+
 }
