@@ -9,6 +9,13 @@ import { PlayIcon } from '@/components/PlayIcon'
 import { getAllEpisodes } from '@/lib/episodes'
 import { Metadata } from 'next'
 
+
+type PageProps = {
+  params: Promise<{
+    episode: string
+  }>
+}
+
 const getEpisode = cache(async (id: string) => {
   const allEpisodes = await getAllEpisodes()
 
@@ -27,11 +34,12 @@ function makeUrlsClickable(text:string) {
   return transformedText;
 }
 
-export async function generateMetadata({
-  params,
-}: {
-  params: { episode: string }
-}): Promise<Metadata> {
+export async function generateMetadata(
+  props: {
+    params: Promise<{ episode: string }>
+  }
+): Promise<Metadata> {
+  const params = await props.params;
   let episode = await getEpisode(params.episode)
 
   return {
@@ -48,12 +56,9 @@ export async function generateMetadata({
   }
 }
 
-export default async function Episode({
-  params,
-}: {
-  params: { episode: string }
-}) {
-  let episode = await getEpisode(params.episode)
+export default async function Episode({params}: PageProps) {
+  const { episode:episodeId } = await params
+  let episode = await getEpisode(episodeId)
   let date = new Date(episode.published)
 
   return (
